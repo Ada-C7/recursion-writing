@@ -6,6 +6,7 @@ Write a method `factorial` that accepts an integer parameter n and that uses rec
 
 - e.g. fact(4) = 4 * 3 * 2 * 1 = 24
 
+
 ### Write #2
 `reverse(s)`
 Write a method `reverse` that accepts a string as a parameter
