@@ -2,7 +2,7 @@
 def factorial(n)
   raise ArgumentError.new("Not an integer") if
   !(n.class==Integer)
-  raise ArgumentError.new("Not a positive integer") if n < 0
+  raise ArgumentError.new("Not a non-negative integer") if n < 0
   if n==0
     return 1
   else
@@ -15,7 +15,7 @@ end
 def factorialB(n, total=1)
   raise ArgumentError.new("Not an integer") if
   !(n.class==Integer)
-  raise ArgumentError.new("Not a positive integer") if n < 0
+  raise ArgumentError.new("Not a non-negative integer") if n < 0
 
   if n==0
     return total
@@ -36,8 +36,7 @@ end
 def bunny(n)
   raise ArgumentError.new("Not an integer") if
   !(n.class==Integer)
-  raise ArgumentError.new("Not a positive integer") if n < 0
-
+  raise ArgumentError.new("Not a non-negative integer") if n < 0
   if n==0
     return 0
   else
@@ -48,6 +47,35 @@ end
 # def nested(s)
 # end
 #
+
+def fib(n)
+  raise ArgumentError.new("Not an integer") if
+  !(n.class==Integer)
+  raise ArgumentError.new("Not a positive integer") if n < 0
+  if n == 1
+    return 1
+  elsif n == 2
+    return 1
+  else
+    return fib(n-1) + fib(n-2)
+  end
+end
+
+def pal(s)
+  if (s.length == 1) || (s.length == 0)
+    return true
+  elsif s[0] == s[-1]
+   return pal(s[1..-2])
+  else
+    return false
+  end
+end
+
+
+
+
+
+
 # # Factorial Tests
 # raise "factorial broke - factorial(4)" unless factorial(4) == 24
 # raise "factorial broke - factorial(0)" unless factorial(0) == 1
